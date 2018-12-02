@@ -6,7 +6,7 @@ public class GoalController : MonoBehaviour
     {
         if(other.transform.parent.tag == "survivor")
         {
-            Destroy(other.gameObject, 1.5f);
+            Destroy(other.transform.parent.gameObject, 1.5f);
             GameManager.Instance.IncrementScore();
         }
     }
