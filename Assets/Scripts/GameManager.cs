@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
 
     public bool IsGamePaused { get; private set; }
 
+    [SerializeField]
+    private int Score;
+
     private void Awake()
     {
         DontDestroyOnLoad(this);
@@ -18,5 +21,24 @@ public class GameManager : MonoBehaviour
     {
         this.IsGamePaused = !this.IsGamePaused;
         Time.timeScale = this.IsGamePaused ? 0f : 1f;
+    }
+
+    public virtual void GameWon()
+    {
+        this.IsGamePaused = true;
+
+        // make YOU WIN panel active
+    }
+
+    public virtual void GameLost()
+    {
+        this.IsGamePaused = true;
+
+        // make YOU LOSE panel active
+    }
+
+    public virtual void IncrementScore()
+    {
+        this.Score += 1;
     }
 }

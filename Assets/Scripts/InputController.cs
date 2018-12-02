@@ -18,16 +18,4 @@ public class InputController : MonoBehaviour
             GameManager.Instance.ToggleGamePause();
         }
     }
-
-    public float GetHorizontalAxisInput()
-    {
-        float axisRaw = Input.GetAxisRaw("Horizontal");
-        return axisRaw;
-    }
-
-    public float GetVerticalAxisInput()
-    {
-        float axisRaw = Input.GetAxisRaw("Vertical");
-        return axisRaw;
-    }
 }
